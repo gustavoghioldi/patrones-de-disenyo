@@ -1,7 +1,6 @@
-function Factory() {
+function TMNTFactory() {
     this.createTMNT = function (name) {
         var character;
- 
         if (name === "Splinter") {
             character = new Master(name);
         } else if (name == "Donatello" || name == "Raphael" || name =="Michelangelo" || name =="Leonardo") {
@@ -33,7 +32,7 @@ var NoCharacter = function (name) {
 
 
 var tmnts = [];
-var factory = new Factory();
+var factory = new TMNTFactory();
 
 tmnts.push(factory.createTMNT("Leonardo"));
 tmnts.push(factory.createTMNT("Splinter"));
