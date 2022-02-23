@@ -1,65 +1,30 @@
-//Credit:
-//@author: http://www.dofactory.com/javascript/design-patterns
+var Target =  function() {
+    this.request = function() {
+        return 'Target: The default target\'s behavior.';
+    }
+}
 
-// old interface 
-function Shipping() {
-    this.request = function(zipStart, zipEnd, weight) {
-        // ...
-        return "$49.75";
+function Adaptee() {
+    this.request = function() {
+        return '.eetpadA eht fo roivaheb laicepS';
     }
 }
- 
-// new interface
- 
-function AdvancedShipping() {
-    this.login = function(credentials) { /* ... */ };
-    this.setStart = function(start) { /* ... */ };
-    this.setDestination = function(destination) { /* ... */ };
-    this.calculate = function(weight) { return "$39.50"; };
-}
- 
-// adapter interface
- 
-function ShippingAdapter(credentials) {
-    var shipping = new AdvancedShipping();
- 
-    shipping.login(credentials);
- 
-    return {
-        request: function(zipStart, zipEnd, weight) {
-            shipping.setStart(zipStart);
-            shipping.setDestination(zipEnd);
-            return shipping.calculate(weight);
-        }
-    };
-}
- 
-// log helper
- 
-var log = (function () {
-    var log = "";
- 
-    return {
-        add: function (msg) { log += msg + "\n"; },
-        show: function () { console.log(log); log = ""; }
+
+function Adapter(adaptee) {
+    this.request = function() {
+        return adaptee.request().split('').reverse().join('');
     }
-})();
- 
-function run() {
-    var shipping = new Shipping();
-    var credentials = {token: "30a8-6ee1"};
-    var adapter = new ShippingAdapter(credentials);
- 
-    // original shipping object and interface
- 
-    var cost = shipping.request("78701", "10010", "2 lbs");
-    log.add("Old cost: " + cost);
- 
-    // new shipping object with adapted interface
- 
-    cost = adapter.request("78701", "10010", "2 lbs");
- 
-    log.add("New cost: " + cost);
-    log.show();
+} 
+
+function clientCode(target) {
+    console.log(target.request())
 }
-run();
+
+
+var target = new Target()
+clientCode(target)
+var adaptee = new Adaptee()
+clientCode(adaptee)
+
+var adapter = new Adapter(adaptee)
+clientCode(adapter)
