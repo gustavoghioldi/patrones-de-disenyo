@@ -78,12 +78,3 @@ Se centra en la reutilización del código para implementar pasos para resolver 
 
 ### Visitor:
 Se utiliza para separar la lógica y las operaciones realizadas sobre una estructura compleja.
-
-## Que usamos o hacia donde vamos en Pepa??
-### Mediator vs Facade
-### Chain of Responsability
-### Factory
-### Singleton
-### Command
-### Visitor
-### Observer Pattern### Proxy 
