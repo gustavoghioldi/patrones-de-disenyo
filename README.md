@@ -78,3 +78,12 @@ Se centra en la reutilización del código para implementar pasos para resolver 
 
 ### Visitor:
 Se utiliza para separar la lógica y las operaciones realizadas sobre una estructura compleja.
+
+### atencion a estos!!
+#### Mediator y Facade (Bhub)
+#### Chain of Responsability en MOTU / Validator Service refactor Paygilant y en el modelo de handlers y middleware de Express
+#### Factory (para instanciar mediante IoC implementaciones de Cache/DAOs/Message Broker ej. SNS/Kafka)
+#### Singleton (todo lo referente a conexiones a bases de datos)
+#### Command (Pepa Framework en el service template nuevo.
+#### Observer Pattern Pub/Sub de PepaBus
+#### Proxy 
